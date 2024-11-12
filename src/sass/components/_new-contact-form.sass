@@ -1,0 +1,159 @@
+.new-contact-form
+  padding-inline: 40px
+  display: flex
+  flex-direction: column
+  row-gap: 8px
+  flex-grow: 1
+
+  @media (width < 1024px)
+    padding-inline: 0
+
+  &__row
+    display: flex
+    align-items: center
+    column-gap: 8px
+
+    @media (width < 745px)
+      flex-direction: column
+
+  &__row--bottom
+    padding-top: 8px
+    display: flex
+    align-items: center
+    column-gap: 8px
+    justify-content: space-between
+
+    @media (width < 745px)
+      column-gap: 16px
+
+  &__label
+    display: flex
+    flex-direction: column
+    row-gap: 8px
+    width: 100%
+    font-size: 12px
+    font-weight: 600
+    line-height: 1.0833
+    color: $blue--900
+
+    @media (hover: hover)
+      cursor: pointer
+
+  &__label--agree
+    display: flex
+    color: $gray--400
+    font-size: 16px
+    line-height: 1.5
+    align-items: center
+    column-gap: 12px
+
+    @media (hover: hover)
+      &:hover
+        cursor: pointer
+
+    @media (width < 1024px)
+      font-size: 12px
+
+  &__link
+    color: $blue--900
+    transition: color $animation-duration ease
+
+    @media (hover: hover)
+      &:hover
+        color: $accent
+
+  &__input
+    padding: 12px 8px
+    margin-bottom: 21px
+    background-color: $gray--100
+    border: none
+    border-radius: 4px
+    font-size: 16px
+    font-weight: 600
+    line-height: 1.25
+    color: $blue--900
+
+    @media (width < 745px)
+      font-size: 14px
+
+    &::placeholder
+      color: $gray--400
+
+    &:focus-visible
+      outline-color: $blue--900
+
+    &:disabled
+      background-color: rgba($accent, 0.1)
+
+      @media (hover: hover)
+        cursor: not-allowed
+
+  &__select
+    @extend .new-contact-form__input
+    color: $gray--400
+    appearance: none
+    padding-right: 36px
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23BCBCBC' stroke-width='1.66667' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: calc(100% - 8px) center
+
+    @media (hover: hover)
+      cursor: pointer
+
+  &__textarea
+    @extend .new-contact-form__input
+    font-family: $main-font
+    font-weight: 400
+    width: 100%
+    min-height: 130px
+    resize: none
+    margin-bottom: 0
+
+  &__checkbox:focus + .new-contact-form__checkmark
+    border-color: $blue--900
+
+  &__checkbox:checked + .new-contact-form__checkmark
+    background-color: $blue--900
+    border-color: $blue--900
+
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      inset: 0
+      border-radius: inherit
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='13' viewBox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L7 11L17 1' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A")
+      background-position: center
+      background-repeat: no-repeat
+
+  &__checkbox:disabled + .new-contact-form__checkmark
+    background-color: rgba($accent, 0.2)
+
+    @media (hover: hover)
+      cursor: not-allowed
+
+    &::before
+      display: none
+
+  &__checkmark
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 24px
+    aspect-ratio: 1
+    border: 1px solid $gray--400
+    border-radius: 4px
+    position: relative
+    flex-shrink: 0
+    transition-property: background-color, border-color
+    transition-duration: $animation-duration
+    transition-timing-function: ease
+
+  &__text
+    text-wrap: balance
+
+  &__button
+    display: inline-flex
+    align-items: center
+    column-gap: 10px
+    width: fit-content

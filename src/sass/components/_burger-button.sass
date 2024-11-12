@@ -1,0 +1,61 @@
+.burger-button
+  $root: &
+  display: none
+  position: relative
+  background-color: transparent
+  border: none
+  padding: 23px 12px
+  place-items: center
+  z-index: 100
+
+  &__item
+    display: block
+    width: 24px
+    height: 2px
+    background-color: $blue--900
+    transition: background-color $animation-duration ease
+
+    &::before,
+    &::after
+      content: ''
+      display: block
+      position: absolute
+      width: 24px
+      height: 2px
+      background-color: $blue--900
+      transition-property: rotate, translate
+      transition-duration: $animation-duration
+      transition-timing-function: ease
+      inset: 0
+      margin: auto
+
+    &::before
+      translate: 0 -8px
+
+    &::after
+      translate: 0 8px
+
+  @media (hover: hover)
+    cursor: pointer
+
+  @media (width < 1180px)
+    display: grid
+
+  &--active
+    #{$root}
+      &__item
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: transparent
+
+        &::before,
+        &::after
+          border-radius: 1px
+          translate: 0
+
+        &::before
+          rotate: 45deg
+
+        &::after
+          rotate: -45deg

@@ -1,0 +1,34 @@
+.footer
+  background-color: #fff
+  padding-block: 22px
+  color: $blue--900
+
+  &__container
+    display: flex
+    justify-content: space-between
+    gap: 12px
+    align-items: center
+
+    @media (width < 1024px)
+      flex-direction: column
+      align-items: flex-start
+
+  &__text
+    font-size: 13px
+    line-height: 1.2307
+
+  &__nav
+    display: flex
+    column-gap: 24px
+
+    @media (width < 1024px)
+      order: -1
+
+  &__link
+    @extend .footer__text
+    color: $blue--900
+    transition: color $animation-duration ease
+
+    @media (hover: hover)
+      &:hover
+        color: $accent

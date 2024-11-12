@@ -1,0 +1,47 @@
+.main-details
+  $root: &
+  font-size: 24px
+  line-height: 1.4166
+
+  @media (hover: hover)
+    cursor: pointer
+
+  @media (width < 1024px)
+    font-size: 16px
+
+  &__summary
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-weight: 500
+    color: $blue--900
+
+  &__toggle-item
+    position: relative
+    width: 16px
+    height: 2px
+    background-color: $blue--900
+    border-radius: 10px
+
+    &::before
+      content: ''
+      display: block
+      width: 2px
+      height: 16px
+      background-color: $blue--900
+      border-radius: 10px
+      position: absolute
+      top: 50%
+      left: 50%
+      translate: -50% -50%
+      transition: opacity $animation-duration ease
+
+  &__text
+    padding-top: 32px
+    color: $gray--900
+
+.main-details[open],
+.main-details--open
+  .main-details__toggle-item
+    &::before
+      opacity: 0

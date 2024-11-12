@@ -1,0 +1,110 @@
+.about
+  padding-block: 160px
+  display: flex
+  flex-direction: column
+  row-gap: 160px
+
+  @media (width < 1024px)
+    row-gap: 100px
+    padding-top: 110px
+    padding-bottom: 50px
+
+  @media (width < 744px)
+    row-gap: 60px
+    padding-block: 60px
+
+  &__block
+    display: flex
+    column-gap: 92px
+
+    @media (width < 1024px)
+      flex-direction: column
+      row-gap: 100px
+
+    @media (width < 744px)
+      row-gap: 60px
+
+  &__content
+    max-width: 608px
+    display: flex
+    flex-direction: column
+    row-gap: 44px
+
+    @media (width < 1024px)
+      max-width: 100%
+      row-gap: 40px
+
+  &__description
+    display: flex
+    flex-direction: column
+    row-gap: 38px
+
+    @media (width < 1024px)
+      row-gap: 24px
+
+  &__title
+    color: $red--900
+    font-size: 32px
+    line-height: 1.0625
+    font-weight: 600
+
+    @media (width < 1024px)
+      font-size: 24px
+      line-height: 1.25
+
+  &__text
+    color: $blue--900
+    font-size: 24px
+    line-height: 1.4166
+
+    @media (width < 1024px)
+      font-size: 16px
+      line-height: 1.5
+
+    &--small
+      font-size: 13px
+
+  &__info
+    flex-grow: 1
+    min-width: 460px
+    display: flex
+    flex-direction: column
+    row-gap: 50px
+
+    @media (width < 1024px)
+      min-width: 0
+
+  &__link-block
+    display: flex
+    flex-direction: column
+    row-gap: 10px
+
+    @media (width < 744px)
+      display: none
+
+  &__link
+    width: fit-content
+    position: relative
+    color: $blue--900
+    font-weight: 700
+    font-size: 16px
+    line-height: 1.1875
+    transition: color $animation-duration ease
+
+    @media (hover: hover)
+      &:hover
+        color: $red--900
+
+        &::before
+          background-color: $red--900
+
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      bottom: 2px
+      left: 0
+      right: 0
+      height: 1px
+      background-color: $blue--900
+      transition: background-color $animation-duration ease

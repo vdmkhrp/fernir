@@ -1,0 +1,92 @@
+.main-section
+  padding-top: 120px
+  display: flex
+  flex-direction: column
+  row-gap: 60px
+
+  &--large
+    padding-top: 160px
+
+  &--dark
+    background-color: $blue--900
+    padding-block: 100px
+
+    @media (wdith < 1024px)
+      padding-block: 80px
+
+    @media (wdith < 744px)
+      padding-block: 60px
+
+    .main-title
+      color: $light
+
+  &__content
+    display: flex
+    flex-direction: column
+    align-items: center
+    row-gap: 40px
+    text-align: center
+    max-width: 818px
+    margin-inline: auto
+
+    @media (width < 1024px)
+      row-gap: 24px
+
+  &__content--large
+    max-width: 1030px
+
+  &__buttons-group
+    padding-top: 20px
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    gap: 20px
+
+    @media (width < 1024px)
+      padding-top: 8px
+
+  &__cards
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 24px
+
+    @media (width < 1024px)
+      gap: 16px
+
+    @media (width < 745px)
+      grid-template-columns: 1fr
+
+  @media (width < 1024px)
+    padding-top: 100px
+    row-gap: 32px
+
+  @media (width < 745px)
+    padding-top: 60px
+    row-gap: 24px
+
+  &__cards--two
+    display: flex
+    flex-direction: column
+    row-gap: 40px
+    padding-bottom: 160px
+
+    @media (width < 1024px)
+      row-gap: 24px
+      padding-bottom: 100px
+
+    @media (width < 745px)
+      row-gap: 16px
+      padding-bottom: 60px
+
+  &__image-block
+    border-radius: 8px
+
+    @media (width < 744px)
+      margin-inline: -16px
+
+    img
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: inherit

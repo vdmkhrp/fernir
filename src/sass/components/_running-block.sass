@@ -1,0 +1,54 @@
+.running-block
+  $root: &
+  display: flex
+  width: fit-content
+
+  &__item
+    --origin-x: calc(((var(--count) - var(--index)) + var(--inset, 0)) * 100%)
+    --destination-x: calc((var(--index) + 1 + var(--outset, 0)) * -100%)
+    --duration: calc(var(--speed) * 1s)
+    --delay: calc((var(--duration) / var(--count)) * (var(--index, 0) - (var(--count) * 0.5)))
+    animation: slide var(--duration) calc(var(--delay) - (var(--count) * 0.5s)) infinite linear
+    translate: var(--origin-x)
+    font-weight: 400
+    color: transparent
+
+  &--company
+    --speed: 80
+    --count: 10
+
+    align-items: center
+
+  &__item--company
+    --outset: 4
+    --inset: -1.5
+
+    @media (width < 744px)
+      --outset: 2
+
+    img
+      display: block
+      width: 180px
+
+      @media(width < 1024px)
+        width: 150px
+
+  &--reviews
+    --speed: 50
+    --count: 11
+
+    align-items: flex-start
+
+  &__item--reviews
+    --outset: 4
+    --inset: -3.5
+
+  @media (hover: hover)
+    &--reviews:has(#{$root}__item--reviews:hover)
+      #{$root}
+        &__item--reviews
+          animation-play-state: paused
+
+@keyframes slide
+  100%
+    translate: var(--destination-x)

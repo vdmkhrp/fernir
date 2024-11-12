@@ -1,0 +1,43 @@
+.info-card
+  display: flex
+  flex-direction: column
+  row-gap: 24px
+  padding: 40px 20px
+  border-radius: 24px
+  box-shadow: 0 2px 8px 0 rgba($blue--900, 0.1)
+  background-color: $light
+  text-align: center
+
+  @media (width < 1024px)
+    padding: 20px
+
+  @media (width < 745px)
+    row-gap: 12px
+
+  &__head
+    display: flex
+    column-gap: 24px
+    justify-content: center
+    align-items: center
+
+    @media (width < 1024px)
+      flex-direction: column
+      row-gap: 12px
+
+    @media (width < 745px)
+      row-gap: 6px
+
+  &__title
+    font-size: 32px
+    font-weight: 600
+
+    @media (width < 1024px)
+      font-size: 16px
+      line-height: 1.25
+
+  &__text
+    font-size: 24px
+    line-height: 1.4166
+
+    @media (width < 1024px)
+      font-size: 14px

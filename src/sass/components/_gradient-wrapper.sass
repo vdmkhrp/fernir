@@ -1,0 +1,28 @@
+.gradient-wrapper
+    min-height: 100vh
+
+    &--radial
+        background-image: $gradient-radial
+        background-blend-mode: normal
+
+    &--diamond
+        background-image: $gradient-diamond
+
+    &--main
+        background-image: $gradient-main
+
+    &--footer
+        position: relative
+        z-index: 10
+
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            inset: 0
+            background-image: $gradient-main
+            transform: matrix(1, 0, 0, -1, 0, 0)
+            z-index: -1
+
+    &--about
+        background-image: $gradient-about

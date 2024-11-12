@@ -1,0 +1,9 @@
+$icon-sizes: 12, 15, 16, 20, 24, 40, 42, 100
+
+.icon
+  display: inline-block
+  aspect-ratio: 1
+
+  @each $s in $icon-sizes
+    &--#{$s}
+      width: #{$s}px

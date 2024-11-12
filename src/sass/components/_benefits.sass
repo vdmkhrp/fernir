@@ -1,0 +1,90 @@
+@use 'sass:math'
+
+$bg-color: $red--100
+$row-gap: 24px
+
+.benefits
+  $root: &
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  row-gap: $row-gap
+
+  @media (width < 744px)
+    grid-template-columns: 100%
+
+  &__item
+    position: relative
+    display: flex
+    flex: 1 1 50%
+
+    &::after
+      content: ""
+      flex-grow: 1
+      min-width: 58px
+      background-image: linear-gradient($bg-color, $bg-color)
+      background-size: 100% 1px
+      background-position: left center
+      background-repeat: no-repeat
+
+    &:nth-child(odd)
+      &::before
+        content: ""
+        position: absolute
+        top: math.div(-$row-gap, 2)
+        bottom: math.div(-$row-gap, 2)
+        width: 1px
+        right: 0
+        translate: 50%
+        background-color: $bg-color
+
+    &:nth-child(even)
+      &::after
+        order: -1
+
+    &:first-child
+      &::before
+        top: 50%
+
+    &:last-child,
+    &:nth-last-child(2)
+      &::before
+        bottom: 50%
+
+    @media (width < 744px)
+      &::before,
+      &::after
+        display: none
+
+      &:not(:last-child)
+        #{$root}
+          &__card
+            position: relative
+
+            &::before
+              content: ""
+              position: absolute
+              top: 100%
+              left: 50%
+              translate: -50%
+              width: 1px
+              height: $row-gap + 1
+              background-color: $bg-color
+
+  &__card
+    width: 100%
+    max-width: 503px
+    padding: 40px
+    border-radius: 24px
+    background-color: rgba(#ffffff, 0.25)
+    border: 1px solid $bg-color
+    align-content: center
+
+    @media (width < 1024px)
+      padding-block: 20px
+
+    @media (width < 744px)
+      max-width: 100%
+      padding: 40px 20px
+
+  &__text
+    text-align: center

@@ -1,0 +1,82 @@
+.documents
+  padding-block: 40px
+  display: flex
+  flex-direction: column
+  row-gap: 40px
+  color: $blue--900
+
+  &__block,
+  &__list
+    display: flex
+    flex-direction: column
+    row-gap: 16px
+
+  &__title
+    font-size: 72px
+    text-transform: uppercase
+    line-height: 1.0833
+    text-align: center
+    text-wrap: pretty
+
+    @media (width < 1024px)
+      font-size: 54px
+
+    @media (width < 744px)
+      font-size: 44px
+
+    @media (width < 375px)
+      font-size: 30px
+      line-height: 1.3333
+
+  &__list-title
+    font-size: 49px
+    line-height: 1.1836
+
+    @media (width < 1024px)
+      font-size: 24px
+
+    @media (width < 744px)
+      font-size: 18px
+
+  &__title,
+  &__list-title
+    font-weight: 600
+    padding-bottom: 24px
+
+    @media (width < 744px)
+      padding-bottom: 10px
+
+  &__text,
+  &__list-text
+    font-size: 18px
+    line-height: 1.4444
+
+    @media (width < 1024px)
+      font-size: 16px
+
+    @media (width < 744px)
+      font-size: 14px
+
+  &__list-text--accent
+    font-weight: 600
+
+  &__link
+    width: fit-content
+    display: inline-flex
+    align-items: center
+    column-gap: 6px
+    font-size: 18px
+    line-height: 1.4285
+    color: $blue--900
+    font-weight: 600
+    transition: color $animation-duration ease
+
+    &:has(svg)
+      margin-left: 15px
+
+    span
+      text-decoration: underline
+
+    @media (hover: hover)
+      &:hover
+        color: $red--900

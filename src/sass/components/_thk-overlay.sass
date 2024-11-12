@@ -1,0 +1,42 @@
+.thk-overlay
+  display: grid
+  position: absolute
+  inset: 0
+  background-color: $blue--900
+  z-index: 100
+  place-items: center
+  text-align: center
+  visibility: hidden
+  opacity: 0
+  transition: opacity 0.5s ease
+
+  @media (width < 1024px)
+    padding-inline: 64px
+
+  @media (width < 745px)
+    padding-inline: 16px
+
+  &__content
+    max-width: 660px
+    display: flex
+    flex-direction: column
+    row-gap: 60px
+
+    @media (width < 1024px)
+      row-gap: 32px
+
+  &__title
+    color: $light
+
+    @media (width < 1024px)
+      font-size: 32px
+
+    @media (width < 745px)
+      font-size: 24px
+
+  &__text
+    color: $light
+
+  &--active
+    visibility: visible
+    opacity: 1
